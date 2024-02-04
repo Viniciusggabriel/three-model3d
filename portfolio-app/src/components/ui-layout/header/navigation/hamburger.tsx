@@ -8,7 +8,7 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "../../../ui/sheet";
-import { Grip, Github, Linkedin } from "lucide-react";
+import { Menu, Github, Linkedin } from "lucide-react";
 
 const Hamburger = () => {
   return (
@@ -17,7 +17,7 @@ const Hamburger = () => {
         <MenubarMenu>
           <ModeToggle />
           <SheetTrigger>
-            <Grip />
+            <Menu />
           </SheetTrigger>
         </MenubarMenu>
       </Menubar>
