@@ -2,10 +2,14 @@
 /* Astro components imports */
 import Header from "../components/ui-layout/header/header";
 import Layout from "../layouts/layout.astro";
-/* React tsx components imports */
+/* React j/tsx components imports */
+import CubeAnimation from "../components/animations/cube.jsx";
 ---
 
 <Layout title="Portfolio">
   <Header client:only />
-  <main></main>
+
+  <main>
+    <CubeAnimation client:only />
+  </main>
 </Layout>
