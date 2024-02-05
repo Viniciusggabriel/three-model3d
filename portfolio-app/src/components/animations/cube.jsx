@@ -27,9 +27,8 @@ const CubeAnimation = () => {
 
     /* Carregando modelo 3D */
     const objLoader = new OBJLoader();
-    objLoader.setPath("../../../public/");
     objLoader.load(
-      "foguete.obj",
+      "../../../public/foguete.obj",
       (object) => {
         object.scale.set(50, 50, 50);
         scene.add(object);
