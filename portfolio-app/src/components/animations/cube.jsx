@@ -1,6 +1,7 @@
 import * as THREE from "three";
 import { useEffect, useRef } from "react";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
+import { OBJLoader } from "three/addons/loaders/OBJLoader";
 
 const CubeAnimation = () => {
   const sceneRef = useRef();
@@ -8,27 +9,41 @@ const CubeAnimation = () => {
   useEffect(() => {
     /* Cria o three */
     const scene = new THREE.Scene();
-    const camera = new THREE.PerspectiveCamera(50, 600 / 600, 0.1, 1000);
+    const camera = new THREE.PerspectiveCamera(
+      90,
+      innerWidth / innerHeight,
+      0.1,
+      1000
+    );
     const renderer = new THREE.WebGLRenderer();
 
     /* Coloca o item do tamanho da renderização */
-    renderer.setSize(600, 600);
+    renderer.setSize(innerWidth, innerHeight);
     /* Adiciona a dom */
     sceneRef.current.appendChild(renderer.domElement);
 
     /* Controle do mouse */
-    var controls = new OrbitControls(camera, renderer.domElement);
+    const controls = new OrbitControls(camera, renderer.domElement);
 
-    /* Cubo */
-    const geometry = new THREE.BoxGeometry();
-    const material = new THREE.MeshBasicMaterial({
-      color: 0x00ff00,
-    });
-    const cube = new THREE.Mesh(geometry, material);
+    /* Carregando modelo 3D */
+    const objLoader = new OBJLoader();
+    objLoader.setPath("../../../public/");
+    objLoader.load(
+      "foguete.obj",
+      (object) => {
+        object.scale.set(50, 50, 50);
+        scene.add(object);
+      },
+      /* Mostra o quão rápido está sendo carregado */
+      (xhr) => {
+        console.log((xhr.loaded / xhr.total) * 100 + "% carregado");
+      },
+      (err) => {
+        console.error("Ocorreu um erro ao renderizar o objeto", err);
+      }
+    );
 
-    scene.add(cube);
-
-    camera.position.z = 5;
+    camera.position.z = 150;
 
     const cubeAnimate = () => {
       requestAnimationFrame(cubeAnimate);
