@@ -3,17 +3,13 @@ import { useEffect, useRef } from "react";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 import { OBJLoader } from "three/addons/loaders/OBJLoader";
 
-const RocketAnimation = () => {
+const Rocket3Ddark = () => {
   const sceneRef = useRef();
-
-  const theme = localStorage.getItem("theme");
 
   useEffect(() => {
     /* Cria o three */
     const scene = new THREE.Scene();
-    scene.background = new THREE.Color(
-      theme == "dark" ? "rgb(0, 0, 0)" : "rgb(205, 205, 205)"
-    );
+    scene.background = new THREE.Color("rgb(0, 0, 0)");
     const camera = new THREE.PerspectiveCamera(
       90,
       innerWidth / innerHeight,
@@ -66,4 +62,4 @@ const RocketAnimation = () => {
   return <div ref={sceneRef} />;
 };
 
-export default RocketAnimation;
+export default Rocket3Ddark;
