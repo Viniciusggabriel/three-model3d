@@ -1,16 +1,12 @@
 ---
 /* Astro components imports */
-import Header from "../components/ui-layout/header/header";
 import Layout from "../layouts/layout.astro";
 /* React j/tsx components imports */
-import RocketAnimation from "../components/animations/rocketAnimation.jsx";
+import Header from "../components/ui-layout/header/header";
+import Home from "../components/ui-layout/section/home/home";
 ---
 
 <Layout title="Portfolio">
   <Header client:only />
-
-  <main>
-    <RocketAnimation client:only />
-  </main>
+  <main><Home client:only /></main>
 </Layout>
-../components/animations/rocketAnimation.jsx
