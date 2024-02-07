@@ -1,0 +1,14 @@
+---
+/* Astro components imports */
+import Layout from "../layouts/layout.astro";
+/* React j/tsx components imports */
+import Header from "../components/ui-layout/header";
+import Rocket3Ddark from "../components/3D/rocket3Ddark";
+---
+
+<Layout title="modelo-3d">
+  <Header client:only />
+  <main>
+    <Rocket3Ddark client:only />
+  </main>
+</Layout>

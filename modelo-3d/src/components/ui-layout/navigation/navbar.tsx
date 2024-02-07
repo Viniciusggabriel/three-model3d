@@ -5,15 +5,13 @@ import {
   MenubarMenu,
   MenubarSeparator,
   MenubarTrigger,
-} from "../../../ui/menubar";
-import { ModeToggle } from "../../../ui/mode-toggle";
+} from "../../ui/menubar";
 import { Github, Linkedin, ArrowRightLeft } from "lucide-react";
 
 const Navbar = () => {
   return (
     <Menubar>
       <MenubarMenu>
-        <ModeToggle />
         <MenubarTrigger>
           links
           <ArrowRightLeft className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all" />

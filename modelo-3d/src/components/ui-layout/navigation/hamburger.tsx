@@ -1,5 +1,4 @@
-import { Menubar, MenubarMenu } from "../../../ui/menubar";
-import { ModeToggle } from "../../../ui/mode-toggle";
+import { Menubar, MenubarMenu } from "../../ui/menubar";
 import {
   Sheet,
   SheetContent,
@@ -7,7 +6,7 @@ import {
   SheetHeader,
   SheetTitle,
   SheetTrigger,
-} from "../../../ui/sheet";
+} from "../../ui/sheet";
 import { Menu, Github, Linkedin } from "lucide-react";
 
 const Hamburger = () => {
@@ -15,7 +14,6 @@ const Hamburger = () => {
     <Sheet>
       <Menubar className="py-4">
         <MenubarMenu>
-          <ModeToggle />
           <SheetTrigger>
             <Menu />
           </SheetTrigger>

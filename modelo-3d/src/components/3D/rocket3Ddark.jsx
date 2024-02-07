@@ -32,6 +32,13 @@ const Rocket3Ddark = () => {
       "/foguete.obj",
       (object) => {
         object.scale.set(50, 50, 50);
+
+        object.traverse((child) => {
+          if (child instanceof THREE.Mesh) {
+            child.material.color.set(0xffffff);
+          }
+        });
+
         scene.add(object);
       },
       /* Mostra o quão rápido está sendo carregado */
